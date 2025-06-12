@@ -233,7 +233,7 @@ const Article = () => {
           </ul>
         </section>
 
-        <style>{`
+        <style>{` 
           .font-serif { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
           .hanging-indent { text-indent: -1.5em; margin-left: 1.5em; }
         `}</style>
