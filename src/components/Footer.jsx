@@ -44,7 +44,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white mt-16">
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Contact Description */}
           <div className="space-y-4">
@@ -56,7 +56,6 @@ const Footer = () => {
             </p>
             <div className="space-y-2 text-gray-400 text-sm font-light">
               <p className="flex items-center">
-                <span className="mr-2">📧</span>
                 <a
                   href="mailto:raya.halwani@gmail.com"
                     className="hover:text-gray-200 transition-colors"
@@ -65,7 +64,6 @@ const Footer = () => {
                 </a>
               </p>
               <p className="flex items-center">
-                <span className="mr-2">📱</span>
                 <a
                   href="tel:+491633734785"
                     className="hover:text-gray-200 transition-colors"
@@ -74,7 +72,6 @@ const Footer = () => {
                 </a>
               </p>
               <p className="flex items-center">
-                <span className="mr-2">📍</span>
                 Oldenburg, Germany
               </p>
             </div>
