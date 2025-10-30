@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ContactSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage("");
+
+    const formData = new FormData(e.target);
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitMessage("Thank you for your message! I'll get back to you soon. ✨");
+        e.target.reset();
+      } else {
+        setSubmitMessage("Oops! Something went wrong. Please try again or contact me directly via email.");
+      }
+    } catch (error) {
+      setSubmitMessage("Oops! Something went wrong. Please try again or contact me directly via email.");
+    } finally {
+      setIsSubmitting(false);
+      // Clear message after 5 seconds
+      setTimeout(() => setSubmitMessage(""), 5000);
+    }
+  };
 
   const socialLinks = [
     {
@@ -84,8 +116,7 @@ const ContactSection = () => {
               Send a Message
             </h3>
             <form 
-              action="https://api.web3forms.com/submit" 
-              method="POST"
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
               {/* Web3Forms Configuration */}
@@ -143,10 +174,21 @@ const ContactSection = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-gray-900 text-white py-3 rounded-lg font-light hover:bg-gray-800 transition-all"
+                disabled={isSubmitting}
+                className="w-full bg-gray-900 text-white py-3 rounded-lg font-light hover:bg-gray-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
+              
+              {submitMessage && (
+                <div className={`p-4 rounded-lg border ${
+                  submitMessage.includes("Thank you") 
+                    ? "bg-green-50 border-green-200 text-green-700" 
+                    : "bg-red-50 border-red-200 text-red-700"
+                }`}>
+                  {submitMessage}
+                </div>
+              )}
             </form>
           </div>
 
