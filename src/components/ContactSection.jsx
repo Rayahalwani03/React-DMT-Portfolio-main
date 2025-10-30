@@ -84,14 +84,14 @@ const ContactSection = () => {
               Send a Message
             </h3>
             <form 
-              action="https://formsubmit.co/raya.halwani@gmail.com" 
+              action="https://api.web3forms.com/submit" 
               method="POST"
               className="space-y-6"
             >
-              {/* FormSubmit Configuration */}
-              <input type="hidden" name="_subject" value="New message from Portfolio Website!" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
+              {/* Web3Forms Configuration */}
+              <input type="hidden" name="access_key" value="bc1f5aab-5e28-4375-bc07-006cee5595f7" />
+              <input type="hidden" name="subject" value="New message from Portfolio Website!" />
+              <input type="hidden" name="from_name" value="Portfolio Contact Form" />
               
               <div>
                 <label
