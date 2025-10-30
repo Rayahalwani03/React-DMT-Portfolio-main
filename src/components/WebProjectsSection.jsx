@@ -1,4 +1,8 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
 const WebProjectsSection = () => {
+  const [ref, isVisible] = useScrollAnimation();
+  
   const projects = [
     {
       title: "CDA App",
@@ -103,7 +107,13 @@ const WebProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-gray-50">
+    <section 
+      id="projects" 
+      ref={ref}
+      className={`py-24 bg-gray-50 transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-light text-gray-900 mb-4">
