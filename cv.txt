@@ -1,0 +1,76 @@
+
+Professional Summary
+Full-stack Software Engineer with hands-on experience in web development, data analytics, and system optimization. Skilled in the MERN stack (MongoDB, Express.js, React.js, Node.js) and passionate about secure, data-driven, and human-centered digital solutions. Currently pursuing an M.Sc. in Engineering of Socio-Technical Systems at the University of Oldenburg, combining software engineering with socio-technical design and data analysis.
+ 
+Education
+Carl von Ossietzky University of Oldenburg – Oldenburg, Germany
+M.Sc. Engineering of Socio-Technical Systems (EngSTS)
+Expected Graduation: 09/2027
+Medium of Instruction: English
+Üsküdar University – Istanbul, Turkey
+B.Sc. Software Engineering
+Graduated: June 2025
+GPA: 3.38 / 4.00 (≈1.9 on German scale)
+Medium of Instruction: English
+Fatih Anadolu High School – Istanbul, Turkey
+Graduated: June 2020 – Science & Social Sciences Program
+ 
+Professional Experience
+Data Analysis Intern – Municipal Orientation Program for Refugee Support (May 2025 – Sep 2025)
+•	Analyzed municipal datasets using Excel, Power BI, and internal systems.
+•	Created data reports and dashboards to support decision-making in local administration.
+•	Focused on data privacy, accuracy, and ethical reporting, aligned with GDPR principles.
+•	Collaborated with IT teams to improve system integration and data flow transparency.
+
+Frontend Developer Intern – Services, Istanbul (Jul 2024 – Sep 2024)
+•	Built and optimized React.js components for responsive user interfaces.
+•	Collaborated on secure API integrations and performance testing.
+•	Contributed to improving UX and data consistency within production systems.
+University Mentor – Üsküdar University (Oct 2022 – Jun 2025)
+•	Supported new students academically and technically, particularly in data management and project planning.
+•	Assisted with organizing workshops on digital tools and teamwork in tech projects.
+ 
+Academic Projects
+Graduation Project (2025)
+•	Developed a secure MERN-stack platform promoting women’s rights, featuring authentication and real-time updates.
+•	Integrated data validation and privacy mechanisms for user safety.
+Machine Learning in Computer Networks (Research)
+•	Explored ML-driven network optimization and secure resource allocation.
+•	Investigated SDN/NFV frameworks and deterministic networking for reliability and performance.
+Job Application System (Agile Scrum, 2024)
+•	Built authentication and access control modules ensuring secure user sessions.
+•	Participated in Agile sprints for iterative testing and quality improvement.
+E-Commerce Testing Project (2023)
+•	Designed automated testing using Selenium and JMeter to detect vulnerabilities and improve reliability.
+•	Reported performance bottlenecks and proposed optimization strategies.
+University Clubs Management System (ASP.NET, 2024)
+•	Led a 10-member team, managing frontend and backend integration using ASP.NET and Bootstrap.
+•	Designed database structures and ERD models for organized, secure data handling.
+ 
+Technical Skills
+Languages: JavaScript, Python, SQL, C#, Java, C++, HTML, CSS
+Frameworks & Tools: React, Node.js, MongoDB, Power BI, Docker, Git, MySQL, PostgreSQL, ASP.NET, Selenium, Puppeteer
+Data & AI: Pandas, NumPy, Matplotlib, Power BI, EDA, Dashboard Design, Data Visualization
+Cybersecurity & Systems: Authentication, Access Control, SDN/NFV Concepts, Data Privacy Awareness (GDPR)
+Concepts: Agile, Scrum, CI/CD, UX Testing, System Modelling
+UI/UX & PM: Figma, Photoshop, Jira, Miro
+ 
+Soft Skills
+•	Analytical Thinking
+•	Problem Solving
+•	Team Collaboration
+•	Cross-Cultural Communication
+ 
+Certifications
+•	IBM – Developing Front-End Apps with React (Dec 2024)
+•	MathWorks – Systems Engineering (Dec 2024)
+•	IBM – Designing User Interfaces and Experiences (UI/UX)
+•	IBM – What is Data Science?
+•	University of California, Davis – SQL for Data Science
+•	Udemy – The Complete SQL Bootcamp
+ 
+Languages
+•	Arabic (Native)
+•	English (Fluent)
+•	German (A1)
+•	Turkish (B2)

@@ -1,29 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import dmtLogo from "../assets/dmt-logo.jpg";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const socialLinks = [
-    {
-      name: "YouTube",
-      url: "https://www.youtube.com/@RayaHalwanii",
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-        </svg>
-      ),
-    },
-    {
-      name: "Instagram",
-      url: "https://instagram.com/rayahalwani",
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-        </svg>
-      ),
-    },
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/raya-halwani-46806a192/",
@@ -33,28 +23,51 @@ const Navbar = () => {
         </svg>
       ),
     },
+    {
+      name: "GitHub",
+      url: "https://github.com/Rayahalwani03",
+      icon: (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg>
+      ),
+    },
+    {
+      name: "CV",
+      url: "https://drive.google.com/file/d/1Rkam2w2qKWIg7FmDZ_4CIILbbmrOyvD4/view?usp=sharing",
+      isDownload: false,
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          />
+        </svg>
+      ),
+    },
   ];
 
   return (
-    <nav className="bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-lg sticky top-0 z-50">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo Section */}
-          <Link to="/" className="flex items-center space-x-4 group">
-            <div className="relative">
-              <img
-                src={dmtLogo}
-                className="h-12 w-12 rounded-lg object-cover transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-md"
-                alt="DMT Logo"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-teal-600 to-blue-800 bg-clip-text text-transparent">
-                Raya Halwani
-              </h1>
-              <p className="text-sm text-gray-500 font-medium">210209979</p>
-            </div>
+          {/* Name Section */}
+          <Link to="/" className="group">
+            <h1 className={`text-2xl font-semibold transition-all duration-300 group-hover:scale-105 ${
+              !isScrolled 
+                ? "text-gray-900" 
+                : "text-gray-900"
+            }`}>
+              Raya Halwani
+            </h1>
           </Link>
 
           {/* Desktop Navigation */}
@@ -63,14 +76,14 @@ const Navbar = () => {
               to="/"
               className="relative px-4 py-2 text-gray-700 font-medium transition-all duration-300 hover:text-blue-600 group"
             >
-              <span className="relative z-10">Home</span>
+              <span className={`relative z-10 ${!isScrolled ? "text-gray-900" : ""}`}>Home</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-teal-600 group-hover:w-full transition-all duration-300"></div>
             </Link>
 
             <Link
               to="/article"
-              className="relative px-4 py-2 text-gray-700 font-medium transition-all duration-300 hover:text-blue-600 group"
+              className={`relative px-4 py-2 font-medium transition-all duration-300 hover:text-blue-600 group ${!isScrolled ? "text-gray-900" : "text-gray-700"}`}
             >
               <span className="relative z-10">Article</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
@@ -79,24 +92,12 @@ const Navbar = () => {
 
             <Link
               to="/about"
-              className="relative px-4 py-2 text-gray-700 font-medium transition-all duration-300 hover:text-blue-600 group"
+              className={`relative px-4 py-2 font-medium transition-all duration-300 hover:text-blue-600 group ${!isScrolled ? "text-gray-900" : "text-gray-700"}`}
             >
               <span className="relative z-10">About Me</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-teal-600 group-hover:w-full transition-all duration-300"></div>
             </Link>
-
-            {/* CV Download Link - Desktop */}
-            <a
-              href="https://drive.google.com/file/d/1ZxMzW2TNI4EGebzB5yAzL-dNCdQhItYQ/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative px-4 py-2 text-gray-700 font-medium transition-all duration-300 hover:text-blue-600 group"
-            >
-              <span className="relative z-10"> CV</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-teal-600 group-hover:w-full transition-all duration-300"></div>
-            </a>
 
             {/* Social Media Icons */}
             <div className="flex items-center space-x-4">
@@ -106,7 +107,7 @@ const Navbar = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                  className={`hover:text-blue-600 transition-colors duration-300 ${!isScrolled ? "text-gray-900" : "text-gray-600"}`}
                   aria-label={link.name}
                 >
                   {link.icon}
@@ -119,7 +120,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-200"
+              className={`inline-flex items-center justify-center p-2 rounded-md hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-200 ${!isScrolled ? "text-gray-900" : "text-gray-700"}`}
             >
               <span className="sr-only">Open main menu</span>
               {!isMenuOpen ? (
@@ -187,16 +188,6 @@ const Navbar = () => {
             >
               👤 About Me
             </Link>
-            {/* CV Download Link - Mobile */}
-            <a
-              href="https://drive.google.com/file/d/1ZxMzW2TNI4EGebzB5yAzL-dNCdQhItYQ/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-3 text-gray-700 font-medium hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
-            >
-              📄 Download CV
-            </a>
             {/* Mobile Social Icons */}
             <div className="flex items-center justify-center space-x-6 mt-4">
               {socialLinks.map((link) => (
