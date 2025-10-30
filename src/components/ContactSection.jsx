@@ -1,36 +1,6 @@
-import { useState } from "react";
+import React from "react";
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitMessage("Thank you for your message! I'll get back to you soon.");
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitting(false);
-      
-      // Clear success message after 5 seconds
-      setTimeout(() => setSubmitMessage(""), 5000);
-    }, 1000);
-  };
 
   const socialLinks = [
     {
@@ -113,7 +83,16 @@ const ContactSection = () => {
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">
               Send a Message
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form 
+              action="https://formsubmit.co/raya.halwani@gmail.com" 
+              method="POST"
+              className="space-y-6"
+            >
+              {/* FormSubmit Configuration */}
+              <input type="hidden" name="_subject" value="New message from Portfolio Website!" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              
               <div>
                 <label
                   htmlFor="name"
@@ -125,8 +104,6 @@ const ContactSection = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   placeholder="Your name"
@@ -143,8 +120,6 @@ const ContactSection = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   placeholder="your.email@example.com"
@@ -160,8 +135,6 @@ const ContactSection = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
@@ -170,16 +143,10 @@ const ContactSection = () => {
               </div>
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-gray-900 text-white py-3 rounded-lg font-light hover:bg-gray-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gray-900 text-white py-3 rounded-lg font-light hover:bg-gray-800 transition-all"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                Send Message
               </button>
-              {submitMessage && (
-                <div className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg">
-                  {submitMessage}
-                </div>
-              )}
             </form>
           </div>
 
