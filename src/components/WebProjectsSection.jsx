@@ -110,21 +110,21 @@ const WebProjectsSection = () => {
     <section 
       id="projects" 
       ref={ref}
-      className={`py-24 bg-gray-50 transition-all duration-1000 ${
+      className={`py-16 md:py-24 bg-gray-50 transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-light text-gray-900 mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-3 md:mb-4 px-4">
             Featured Projects
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-light px-4">
             Innovative solutions combining full-stack development, data analytics, and user-centered design
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}

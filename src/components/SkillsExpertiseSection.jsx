@@ -96,21 +96,21 @@ const SkillsExpertiseSection = () => {
     <section 
       id="skills" 
       ref={ref}
-      className={`py-24 bg-white transition-all duration-1000 ${
+      className={`py-16 md:py-24 bg-white transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-light text-gray-900 mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-3 md:mb-4 px-4">
             Skills & Expertise
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-light px-4">
             Technical competencies spanning full-stack development, data analytics, and modern software practices
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {skillCategories.map((category, index) => (
             <div
               key={index}
