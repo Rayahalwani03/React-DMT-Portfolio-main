@@ -20,7 +20,7 @@ const ContactSection = () => {
       const data = await response.json();
 
       if (data.success) {
-        setSubmitMessage("Thank you for your message! I'll get back to you soon. ✨");
+        setSubmitMessage("Thank you for your message! I'll get back to you soon.");
         e.target.reset();
       } else {
         setSubmitMessage("Oops! Something went wrong. Please try again or contact me directly via email.");
