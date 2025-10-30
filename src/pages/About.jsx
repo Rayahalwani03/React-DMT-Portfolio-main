@@ -192,7 +192,7 @@ const About = () => {
             </p>
             
             <p>
-              My journey into tech started at Üsküdar University in Istanbul, where I earned my B.Sc. in Software Engineering with a GPA of 3.38. It wasn't always easy, learning to code, debugging late into the night, working on team projects with people from different backgrounds. But each challenge taught me something valuable, not just about writing code, but about solving real problems for real people.
+              My journey into tech started at Üsküdar University in Istanbul, where I earned my B.Sc. in Software Engineering with a GPA of 3.4. It wasn't always easy, learning to code, debugging late into the night, working on team projects with people from different backgrounds. But each challenge taught me something valuable, not just about writing code, but about solving real problems for real people.
             </p>
 
             <p>

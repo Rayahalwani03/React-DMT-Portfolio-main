@@ -26,7 +26,7 @@ const EducationSection = () => {
       location: "Istanbul, Turkey",
       period: "Completed",
       status: "Graduated",
-      gpa: "3.3",
+      gpa: "3.4",
       gradient: "from-purple-50 to-pink-50",
       borderColor: "border-purple-100",
       badgeColor: "bg-purple-600",
